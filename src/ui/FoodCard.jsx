@@ -23,6 +23,7 @@ const FoodCard = ({ searchFilterCategory }) => {
             key={index}
             className="
             group
+           
             relative
             flex
             h-full

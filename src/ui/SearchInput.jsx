@@ -1,14 +1,15 @@
 import React from "react";
 import { Input } from "@/components/ui/input";
 
-const SearchInput = ({ onChange, value }) => {
+const SearchInput = ({ onChange, value,placeholder }) => {
   return (
     <div>
       <Input
         type="email"
-        placeholder="Search..."
+        placeholder={placeholder}
         onChange={onChange}
         value={value}
+     
       />
     </div>
   );

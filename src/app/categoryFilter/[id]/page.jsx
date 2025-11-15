@@ -23,13 +23,14 @@ const page = () => {
       </div>
     );
   }
-
+  let placeholder = "Search Any Food...";
   return (
     <>
       <div className="mt-10 w-[50%] mx-auto">
          <SearchInput
           onChange={(e) => setFoodFirstName(e.target.value)}
           value={foodFirstName}
+          placeholder={placeholder}
         />
       </div>
 
