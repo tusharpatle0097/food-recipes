@@ -75,10 +75,11 @@ export const FoodProvider = ({ children }) => {
       .get(`https:www.themealdb.com/api/json/v1/1/filter.php?c=${params.id}`)
       .then((res) => {
         setMeal(res.data.meals || []);
+        console.log(res.data.meals,'fatchCategoryFiltererror')
       })
       .catch((err) => {
-        console.log(err);
-        setMeal([]);
+        console.log(err,"mobile error");
+        
       });
   };
 
