@@ -1,18 +1,11 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Spinner } from "@/components/ui/spinner";
+import Loading from "./Loading";
 
 const FoodCard = ({ searchFilterCategory }) => {
   if (!searchFilterCategory || searchFilterCategory.length === 0) {
-    return (
-      <div className="py-10 flex items-center justify-center">
-        <div>
-          <Spinner />
-          <p className="text-[1.2rem] ml-4">Please Wait...</p>
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (
@@ -78,7 +71,6 @@ const FoodCard = ({ searchFilterCategory }) => {
                   <img
                     src={item.strCategoryThumb}
                     alt={item.strCategory}
-                    fill
                     className="object-contain p-2"
                   />
                 </div>

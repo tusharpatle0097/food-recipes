@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import Link from "next/link";
 
 const CategoryFilterCard = ({ searchCategoryFilter }) => {
+
    
   return (
     <>
@@ -90,7 +91,7 @@ const CategoryFilterCard = ({ searchCategoryFilter }) => {
                   </span>
                 </div>
 
-                <Link href={`/mealDetails/${item.idMeal}`}>
+                <Link href={`/meal/${item.idMeal}`}>
                   <button
                     type="button"
                     className="

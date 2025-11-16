@@ -1,47 +1,45 @@
 "use client";
 
 import { useFood } from "@/app/context/FoodContext";
-
-import SearchInput from "@/ui/SearchInput";
-import MealCard from '../../../ui/MealCard'
-
+import MealCard from "../../../ui/MealCard";
 import CategoryFilterCard from "@/ui/CategoryFilterCard";
-import { Spinner } from "@/components/ui/spinner";
+import HeroSection from "@/ui/HeroSection";
+import Loading from "@/ui/Loading";
+
 const page = () => {
-  let { searchCategoryFilter, setCategoryFilter, categoryFilterSearch,    foodFirstNameData,
-    foodFirstName,
-    setFoodFirstName, } =
-    useFood();
+  let {
+    searchCategoryFilter,
+    foodFirstNameData,
+  } = useFood();
 
   if (!searchCategoryFilter || searchCategoryFilter.length === 0) {
-    return (
-      <div className="py-10 flex items-center justify-center">
-        <div>
-          <Spinner />
-          <p className="text-[1.2rem] ml-4">Please Wait...</p>
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
   let placeholder = "Search Any Food...";
   return (
     <>
-      <div className="mt-10 w-[50%] mx-auto">
-         <SearchInput
-          onChange={(e) => setFoodFirstName(e.target.value)}
-          value={foodFirstName}
-          placeholder={placeholder}
-        />
-      </div>
+      <HeroSection />
 
       <div>
-        {foodFirstNameData.length === null || foodFirstNameData.length >= 1 ? (
+        <div className="lg:px-20 px-2 py-2 pt-5">
           <MealCard mealData={foodFirstNameData} />
-        ) : (
-          <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 px-20 py-10">
+        </div>
+
+        <div>
+          <div className="lg:ml-21 ml-2">
+            <h1
+              style={{ letterSpacing: "4px" }}
+              className="uppercase lg:text-[2rem] text-[1rem] font-semibold  tracking-wide"
+            >
+              meals
+            </h1>
+            <p className="bg-red-600 lg:w-28 lg:h-1 h-[3px] w-17 "></p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-4 lg:px-20 px-2 py-5">
             <CategoryFilterCard searchCategoryFilter={searchCategoryFilter} />
           </div>
-        )}
+        </div>
       </div>
     </>
   );

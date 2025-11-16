@@ -120,3 +120,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    /* to bottom-right */ #fffbeb 0%,
+    /* amber-50  */ #fff1f2 40%,
+    /* rose-50   */ #ecfdf3 100% /* emerald-50*/
+  );
+  color: #0f172a;
+}
