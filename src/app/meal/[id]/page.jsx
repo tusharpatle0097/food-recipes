@@ -2,15 +2,15 @@
 
 import { useFood } from "@/app/context/FoodContext";
 import Loading from "@/ui/Loading";
+import { House } from "lucide-react";
+import Link from "next/link";
 
 export default function LambBiryaniPage() {
   const { mealDis } = useFood();
   console.log(mealDis, "lkl");
 
   if (!mealDis || mealDis.length === 0) {
-    return (
-     <Loading/>
-    );
+    return <Loading />;
   }
 
   const meal = mealDis[0]; // safe now
@@ -47,6 +47,10 @@ export default function LambBiryaniPage() {
       <div className="pointer-events-none fixed inset-x-0 top-0 z-0 h-64 bg-gradient-to-b from-amber-300/50 via-transparent to-transparent blur-3xl opacity-70" />
 
       <main className="relative z-10 mx-auto flex max-w-6xl flex-col gap-8 px-4 py-10 lg:px-6 lg:py-12">
+        <Link href="/">
+          <House style={{ color: "#eb6134" }} />
+        </Link>
+
         {/* Breadcrumb & meta */}
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-3">

@@ -3,12 +3,14 @@
 import React from "react";
 import HeroSection from "@/ui/HeroSection";
 import CategoryList from "./categoryList/page";
+import Footer from "@/ui/Footer";
 
 const page = () => {
   return (
     <>
       <HeroSection />
       <CategoryList />
+     
     </>
   );
 };
