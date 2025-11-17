@@ -4,6 +4,8 @@ import React from "react";
 import { Search } from "lucide-react";
 import { useFood } from "@/app/context/FoodContext";
 import SearchInput from "./SearchInput";
+import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
   const { foodFirstName, setFoodFirstName, fetchFoodByFirstName, noMealError } =
@@ -11,10 +13,24 @@ const HeroSection = () => {
   console.log(noMealError, "noMealError");
   let placeholder = "Search recipes here...";
 
+  let router = useRouter();
+  const aboutPage = () => {
+    router.push("/about");
+  };
+
   return (
     <>
+      <div className="flex justify-center items-center px-60 mt-5">
+        <Button
+          onClick={aboutPage}
+          variant="outline"
+          className=" rounded-full cursor-pointer"
+        >
+          About Us
+        </Button>
+      </div>
       <section
-        className="w-full  pt-16 px-6"
+        className="w-full  pt-8 px-6"
         style={{ backgroundImage: "url('/images/food-bg.jpg')" }}
       >
         <div className="max-w-5xl mx-auto text-center space-y-6">
