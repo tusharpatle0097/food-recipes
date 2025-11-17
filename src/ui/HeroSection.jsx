@@ -20,7 +20,7 @@ const HeroSection = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center px-60 mt-5">
+      <div className="flex justify-center items-center  mt-5">
         <Button
           onClick={aboutPage}
           variant="outline"
