@@ -66,7 +66,7 @@ export const FoodProvider = ({ children }) => {
         }
 
         if (foodFirstName.length === 0 || foodFirstName.length === null) {
-          setNoMealError("Please fill all the fields");
+          setNoMealError("Please enter a value before submitting.");
           setTimeout(() => {
             setNoMealError("");
           }, 2000);

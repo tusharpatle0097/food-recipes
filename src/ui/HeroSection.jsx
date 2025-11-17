@@ -18,7 +18,7 @@ const HeroSection = () => {
         style={{ backgroundImage: "url('/images/food-bg.jpg')" }}
       >
         <div className="max-w-5xl mx-auto text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
+          <h1 className="ibm-plex-sans text-4xl md:text-6xl font-bold text-gray-900 leading-tight tracking-tight">
             Find the Perfect Recipe for Every Meal
           </h1>
 
